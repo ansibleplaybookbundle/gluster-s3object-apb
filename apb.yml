@@ -1,0 +1,22 @@
+version: 1.0
+name: gluster-s3-apb
+description: GlusterFS S3 object service
+bindable: False
+async: optional
+metadata:
+  displayName: GlusterFS S3 object service
+plans:
+  - name: default
+    description: This plan deploys gluster-s3-apb. It runs using existing CNS cluster.
+    free: True
+    metadata: {}
+    parameters: []
+#      - title: OpenShift Admin User
+#        name: admin_user
+#        type: string
+#        required: true
+#      - title: OpenShift Admin Password
+#        name: admin_password
+#        type: string
+#        required: true
+#        display_type: password
