@@ -16,12 +16,6 @@ COPY playbooks /opt/apb/actions
 COPY roles /opt/ansible/roles
 RUN chmod -R g=u /opt/{ansible,apb}
 
-RUN yum  install sed bash wget which -y #&& yum clean all
-
-#RUN wget https://github.com/openshift/origin/releases/download/v3.9.0/openshift-origin-client-tools-v3.9.0-191fece-linux-64bit.tar.gz
-#RUN tar zxvf openshift-origin-client-tools-v3.9.0-191fece-linux-64bit.tar.gz
-#RUN mv openshift-origin-client-tools-v3.9.0-191fece-linux-64bit/oc /usr/bin
-#RUN rm -rf openshift-origin-client-tools-v3.9.0-191fece-linux-64bit
-#RUN chmod u+x /usr/bin/oc
+RUN yum install sed bash wget which -y
 
 USER apb
