@@ -10,13 +10,27 @@ plans:
     description: This plan deploys gluster-s3-apb. It deploys S3 service using underlying CNS(gluster) cluster.
     free: True
     metadata: {}
-    parameters: []
-#      - title: OpenShift Admin User
-#        name: admin_user
-#        type: string
-#        required: true
-#      - title: OpenShift Admin Password
-#        name: admin_password
-#        type: string
-#        required: true
-#        display_type: password
+    parameters:
+      - name: S3_ACCOUNT
+        default: 'testvolume'
+        pattern: "^[a-zA-Z0-9_-]*$"
+        type: string
+        title: Name of the S3 account
+        #display_group: Config
+
+      - name: S3_USER
+        default: 'adminuser'
+        type: string
+        pattern: "^[a-zA-Z0-9_.-]*$"
+        required: True
+        title: Username for gluster-s3 user that will be used for accessing the object storage
+        #display_group: Config
+
+      - name: S3_PASSWORD
+        required: True
+        default: 'test123'
+        type: string
+        pattern: "^[a-zA-Z0-9_.-]*$"
+        display_type: password
+        title: Password for the S3 connection user
+        #display_group: Config

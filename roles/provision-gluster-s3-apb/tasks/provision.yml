@@ -73,8 +73,8 @@
 
 - name: Provision template
   command: oc new-app  /tmp/gluster-s3-template.yaml \
-             --param=S3_ACCOUNT=testvolume  --param=S3_USER=adminuser \
-             --param=S3_PASSWORD=itsmine --param=PVC=gluster-s3-claim \
+             --param=S3_ACCOUNT=$S3_ACCOUNT  --param=S3_USER=$S3_USER \
+             --param=S3_PASSWORD=$S3_PASSWORD --param=PVC=gluster-s3-claim \
              --param=META_PVC=gluster-s3-meta-claim
   register: debug_out
 - name: Show generated template
